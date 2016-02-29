@@ -16,6 +16,9 @@ INCLUDE_DIRECTORIES(${YARP_INCLUDE_DIRS} ${ICUB_INCLUDE_DIRS})
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ICUB_LINK_FLAGS}")
 
 
+install(FILES impedanceTest.ini DESTINATION ${PROJECT_BINARY_DIR})
+MESSAGE( STATUS "PROJECT_BINARY_DIR: " ${PROJECT_BINARY_DIR} )
+
 add_executable(iCubImpedanceControlTest main.cpp)
 
 target_link_libraries(iCubImpedanceControlTest ${YARP_LIBRARIES})
